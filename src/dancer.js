@@ -1,5 +1,5 @@
 // Creates and returns a new dancer object that can step
-var makeDancer = function(top, left, timeBetweenSteps){
+var makeDancerFunctional = function(top, left, timeBetweenSteps){
 
   var dancer = {};
 
@@ -12,6 +12,7 @@ var makeDancer = function(top, left, timeBetweenSteps){
     // it just schedules the next step
     setTimeout(dancer.step, timeBetweenSteps);
   };
+
   dancer.step();
 
   dancer.setPosition = function(top, left){
@@ -30,4 +31,27 @@ var makeDancer = function(top, left, timeBetweenSteps){
   dancer.setPosition(top, left);
 
   return dancer;
+};
+
+var makeDancer = function(top, left, timeBetweenSteps) {
+  this.$node = $('<span class="dancer"></span>');
+  this.timeBetweenSteps = timeBetweenSteps;
+  // invokes step at instantiation
+  this.step();
+};
+
+// takes in the context of the subclass object and invokes setTimeout
+// we need to bind this.step so the this isn't the global object
+// used to call another function later on after a given number of seconds
+// setTimeout automatically invokes the subclass step method
+makeDancer.prototype.step = function(){
+  setTimeout.call(this, this.step.bind(this), this.timeBetweenSteps);
+};
+
+makeDancer.prototype.setPosition = function(top, left) {
+  var styleSetting = {
+    top: top,
+    left: left
+  };
+  this.$node.css(styleSettings);
 };
