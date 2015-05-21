@@ -6,3 +6,4 @@ var makeSpidermanDancer = function(top, left, timeBetweenSteps) {
 
 makeSpidermanDancer.prototype = Object.create(makeFaderDancer.prototype);
 makeSpidermanDancer.prototype.constructor = makeSpidermanDancer;
+
