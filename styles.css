@@ -29,3 +29,12 @@ body, a:link, a:visited, a:active{
 .blinkyDancer{
   border: 10px solid blue;
 }
+
+.zoomDancer{
+  display: block;
+}
+
+.spidermanDancer{
+  width: 100%;
+  height: 100%;
+}

@@ -4,6 +4,8 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   // invokes step at instantiation
   this.step();
   this.setPosition(top, left);
+  this.width = this.$node.width();
+  this.height = this.$node.height();
 };
 
 // takes in the context of the subclass object and invokes setTimeout
