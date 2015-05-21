@@ -8,9 +8,9 @@ makeFaderDancer.prototype.constructor = makeFaderDancer;
 
 makeFaderDancer.prototype.step = function() {
 
-  this.$node.fadeIn();
+  // this.$node.fadeIn();
 
   makeDancer.prototype.step.call(this);
 
-  this.$node.fadeOut();
+  // this.$node.fadeOut();
 };

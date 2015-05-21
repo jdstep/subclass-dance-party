@@ -1,5 +1,6 @@
 var makeDancer = function(top, left, timeBetweenSteps) {
   this.$node = $('<span class="dancer"></span>');
+  // this.$node.addClass('flippy');
   this.timeBetweenSteps = timeBetweenSteps;
   // invokes step at instantiation
   this.step();

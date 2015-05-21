@@ -34,7 +34,17 @@ body, a:link, a:visited, a:active{
   display: block;
 }
 
-.spidermanDancer{
-  width: 100%;
-  height: 100%;
+/*this CSS is from ChaseMoskal on StackOverflow*/
+.flippy>img {
+  /**/-moz-transform:scale(1,1);-webkit-transform:scale(1,1);
+  transform:scale(1,1);
+  /**/-webkit-transition:all 600ms ease;-webkit-transition:all 600ms ease;
+  transition:all 600ms ease;
 }
+/*this CSS from ChaseMoskal on StackOverflow*/
+.flippy:hover>img {
+  /**/-moz-transform:scale(-1,1);-webkit-transform:scale(-1,1);
+  transform:scale(-1,1);
+}
+
+
