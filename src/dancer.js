@@ -18,6 +18,8 @@ makeDancer.prototype.step = function(){
 
   // setTimeout.call(this, this.step.bind(this), this.timeBetweenSteps);
   setTimeout(function(){ context.step();}, this.timeBetweenSteps);
+
+
 };
 
 makeDancer.prototype.setPosition = function(top, left) {

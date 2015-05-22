@@ -20,10 +20,13 @@ $(document).ready(function(){
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
+    var windowHeight = $("body").height();
+    var randomHeight = Math.floor(Math.random()*(windowHeight*0.7 - windowHeight*0.3) + windowHeight*0.3);
+
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
+      randomHeight,
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
@@ -38,7 +41,10 @@ $(document).ready(function(){
 
   $(".partnerUpDancersButton").on("click", function(event){
     partnerUp(dancers);
+    // dancers = partnerUp(dancers);
+    // partnerUpMove(dancers);
   });
+
 
 
 
